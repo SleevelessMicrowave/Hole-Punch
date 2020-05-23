@@ -6,9 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 12f;
+    public GameObject character;
+
+    public float speed = 8f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+
+    public KeyCode sprint;
+    public KeyCode crouch;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -26,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(sprint))
+        {
+            speed = 12;
+        }
+        else if (Input.GetKeyUp(sprint))
+        {
+            speed = 8;
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -48,5 +62,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(crouch))
+        {
+            character.transform.localScale = new Vector3(1, .4f, 1);
+        }
+        else if (Input.GetKeyUp(crouch))
+        {
+            character.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
