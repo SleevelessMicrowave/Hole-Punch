@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 20467517}
   speed: 12
-  gravity: -25
+  gravity: -40
   jumpHeight: 3
   groundCheck: {fileID: 1370433135}
   groundDistance: 0.4
@@ -374,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.14447534, y: -0.49848616, z: 0.7944004, w: 0.31554154}
-  m_LocalPosition: {x: 3.8, y: 12.05, z: -6.58}
+  m_LocalPosition: {x: 5.05, y: 25.03, z: -13.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
