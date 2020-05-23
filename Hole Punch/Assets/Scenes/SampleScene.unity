@@ -187,10 +187,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 20467517}
+  character: {fileID: 20467516}
   speed: 8
   gravity: -40
   jumpHeight: 3
   sprint: 304
+  crouch: 306
   groundCheck: {fileID: 1370433135}
   groundDistance: 0.4
   groundMask:
