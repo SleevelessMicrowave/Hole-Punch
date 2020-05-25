@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject character;
 
+    public Camera player;
+
     public float speed = 8f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -34,10 +36,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(sprint))
         {
             speed = 12;
+            player.fieldOfView = 68;
         }
         else if (Input.GetKeyUp(sprint))
         {
             speed = 8;
+            player.fieldOfView = 60;
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

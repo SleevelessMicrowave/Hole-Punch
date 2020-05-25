@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 20467517}
   character: {fileID: 20467516}
+  player: {fileID: 963194227}
   speed: 8
   gravity: -40
   jumpHeight: 3
