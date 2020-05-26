@@ -76,10 +76,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(crouch))
         {
+            speed = 6;
             character.transform.localScale = new Vector3(1, .4f, 1);
         }
         else if (Input.GetKeyUp(crouch))
         {
+            speed = 8;
             character.transform.localScale = new Vector3(1, 1, 1);
         }
     }
