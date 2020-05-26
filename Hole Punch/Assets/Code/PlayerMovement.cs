@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Camera player;
 
+    public ParticleSystem wind;
+
     public float speed = 8f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -27,21 +29,26 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(sprint))
         {
             speed = 12;
             player.fieldOfView = 68;
+            wind.Play();
+            wind.enableEmission = true;
         }
         else if (Input.GetKeyUp(sprint))
         {
             speed = 8;
             player.fieldOfView = 60;
+            wind.enableEmission = false;
+            wind.Stop();
         }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
