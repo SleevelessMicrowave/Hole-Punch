@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(sprint))
+        /*if (Input.GetKeyDown(sprint))
         {
             speed = 12;
             player.fieldOfView = 68;
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             player.fieldOfView = 60;
             wind.enableEmission = false;
             wind.Stop();
-        }
+        }*/
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
