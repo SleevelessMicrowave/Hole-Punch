@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class ScopeIn : MonoBehaviour
 {
-    public KeyCode scope;
+    public GameObject weaponCamera;
+    public Camera mainCamera;
+
+    public float scopedFOV = 15f;
+    private float normalFOV;
+
     public Animator sniper;
+
+    public GameObject ScopeOverlay;
+    public GameObject blackLeft;
+    public GameObject blackRight;
+
+    private bool isScoped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +27,43 @@ public class ScopeIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(scope))
+        if (Input.GetButtonDown("Fire2"))
         {
-            sniper.SetBool("Scoped", true);
+            isScoped = !isScoped;
+            sniper.SetBool("Scoped", isScoped);
+
+            //ScopeOverlay.SetActive(isScoped);
+            //blackLeft.SetActive(isScoped);
+            //blackRight.SetActive(isScoped);
+
+            if (isScoped)
+                StartCoroutine(OnScoped());
+            else
+                OnUnscoped();
         }
-        else if (Input.GetKeyUp(scope))
-        {
-            sniper.SetBool("Scoped", false);
-        }
+        
+    }
+
+    void OnUnscoped()
+    {
+        ScopeOverlay.SetActive(false);
+        blackLeft.SetActive(false);
+        blackRight.SetActive(false);
+        weaponCamera.SetActive(true);
+
+        mainCamera.fieldOfView = normalFOV;
+    }
+
+    IEnumerator OnScoped()
+    {
+        yield return new WaitForSeconds(.15f);
+
+        ScopeOverlay.SetActive(true);
+        blackLeft.SetActive(true);
+        blackRight.SetActive(true);
+        weaponCamera.SetActive(false);
+
+        normalFOV = mainCamera.fieldOfView;
+        mainCamera.fieldOfView = scopedFOV;
     }
 }
