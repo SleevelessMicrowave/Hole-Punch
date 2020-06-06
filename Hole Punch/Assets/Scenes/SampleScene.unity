@@ -190,6 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 20467517}
   character: {fileID: 20467516}
+  gun: {fileID: 700574648}
   player: {fileID: 963194227}
   wind: {fileID: 1349273922}
   speed: 8
@@ -308,20 +309,40 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0ab71a742475e0f4d94269e31a45a55b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -732959106999872827, guid: 0ab71a742475e0f4d94269e31a45a55b,
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -732959106999872827, guid: 0ab71a742475e0f4d94269e31a45a55b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -153716940994731797, guid: 0ab71a742475e0f4d94269e31a45a55b,
         type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -153716940994731797, guid: 0ab71a742475e0f4d94269e31a45a55b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2294571496723402047, guid: 0ab71a742475e0f4d94269e31a45a55b,
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294571496723402047, guid: 0ab71a742475e0f4d94269e31a45a55b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab71a742475e0f4d94269e31a45a55b, type: 3}

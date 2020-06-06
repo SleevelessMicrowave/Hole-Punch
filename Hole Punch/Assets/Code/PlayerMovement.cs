@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public GameObject character;
+    public GameObject gun;
 
     public Camera player;
 
@@ -78,11 +79,13 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 6;
             character.transform.localScale = new Vector3(1, .4f, 1);
+            gun.transform.localScale = new Vector3(.40686f, 1, .40686f);
         }
         else if (Input.GetKeyUp(crouch))
         {
             speed = 8;
             character.transform.localScale = new Vector3(1, 1, 1);
+            gun.transform.localScale = new Vector3(.40686f, .40686f, .40686f);
         }
     }
 }
