@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 20467517}
   - component: {fileID: 20467519}
   - component: {fileID: 20467520}
+  - component: {fileID: 20467521}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Untagged
@@ -222,6 +223,22 @@ MonoBehaviour:
   ScopeOverlay: {fileID: 122310847}
   blackLeft: {fileID: 1245939201}
   blackRight: {fileID: 1236979691}
+  speed: 50
+  shoot: 323
+--- !u!114 &20467521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20467516}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889d80f15391e3a45b184df9e911bbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  shoot: 323
 --- !u!1001 &103547230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -343,6 +360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885177431065670908, guid: 0ab71a742475e0f4d94269e31a45a55b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98021
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab71a742475e0f4d94269e31a45a55b, type: 3}
