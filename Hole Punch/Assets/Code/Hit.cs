@@ -7,15 +7,17 @@ public class Hit : MonoBehaviour
 
     public Rigidbody rb;
 
+    public float duration;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, duration);
     }
 
     void Update()
     {
-        
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
     }
 
     void OnCollisionEnter(Collision collision)
