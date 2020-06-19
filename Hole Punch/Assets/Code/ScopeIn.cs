@@ -51,14 +51,16 @@ public class ScopeIn : MonoBehaviour
         }
         if (isScoped)
         {
-
+            PlayerMovement.speed = 4;
             if (Input.GetKeyDown(shoot))
             {
                 Shoot();
 
                 isScoped = false;
-                sniper.SetBool("Scoped", false);
-                OnUnscoped();
+                //sniper.SetBool("Scoped", false);
+                sniper.SetBool("Reload", true);
+                StartCoroutine(wait());
+                
             }
 
         }
@@ -71,8 +73,16 @@ public class ScopeIn : MonoBehaviour
         blackLeft.SetActive(false);
         blackRight.SetActive(false);
         weaponCamera.SetActive(true);
-
+        sniper.SetBool("Reload", false);
+        sniper.SetBool("Scoped", false);
+        PlayerMovement.speed = 8;
         mainCamera.fieldOfView = normalFOV;
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(.15f);
+        OnUnscoped();
     }
 
     IEnumerator OnScoped()

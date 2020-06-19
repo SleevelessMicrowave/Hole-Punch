@@ -194,7 +194,6 @@ MonoBehaviour:
   gun: {fileID: 700574648}
   player: {fileID: 963194227}
   wind: {fileID: 1349273922}
-  speed: 8
   gravity: -40
   jumpHeight: 3
   sprint: 304

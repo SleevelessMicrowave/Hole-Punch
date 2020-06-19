@@ -13,6 +13,7 @@ public class Shoot: MonoBehaviour
 
     public KeyCode shoot;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class Shoot: MonoBehaviour
             instBulletRigidbody.velocity = Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z) * new Vector3(0, 0, speed);
             //instBulletRigidbody.AddForce(Vector3.left * speed);
             //Camera.main.transform.forward * speed
+            
         }
     }
 }

@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem wind;
 
-    public float speed = 8f;
+    public static float speed = 8f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(crouch))
+        /*if (Input.GetKeyDown(crouch))
         {
             speed = 6;
             character.transform.localScale = new Vector3(1, .4f, 1);
@@ -86,6 +86,6 @@ public class PlayerMovement : MonoBehaviour
             speed = 8;
             character.transform.localScale = new Vector3(1, 1, 1);
             gun.transform.localScale = new Vector3(.40686f, .40686f, .40686f);
-        }
+        }*/
     }
 }
