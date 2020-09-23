@@ -32,7 +32,7 @@ public class ScopeIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && WeaponSwitching.selectedWeapon == 0)
         {
             isScoped = !isScoped;
             sniper.SetBool("Scoped", isScoped);
