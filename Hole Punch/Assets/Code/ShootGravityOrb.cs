@@ -25,7 +25,7 @@ public class ShootGravityOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && shot == false)
+        if (Input.GetKeyDown(KeyCode.F) && shot == false && WeaponSwitching.selectedWeapon == 1)
         {
             GameObject instBullet = Instantiate(prefab, transform.position + Camera.main.transform.forward * 5 + Camera.main.transform.up * 3 / 2, Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z)) as GameObject;
             instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
@@ -35,7 +35,7 @@ public class ShootGravityOrb : MonoBehaviour
             shot = true;
             
         }
-        else if (Input.GetKeyDown(KeyCode.F) && shot == true)
+        else if (Input.GetKeyDown(KeyCode.F) && shot == true && WeaponSwitching.selectedWeapon == 1)
         {
             //stops bullet if F is press again
             instBulletRigidbody.velocity = instBulletRigidbody.velocity = Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z) * new Vector3(0, 0, 0); ;
