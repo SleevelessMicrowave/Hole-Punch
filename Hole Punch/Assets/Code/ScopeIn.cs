@@ -11,6 +11,7 @@ public class ScopeIn : MonoBehaviour
     public float scopedFOV = 15f;
     private float normalFOV;
 
+//controls animations
     public Animator sniper;
 
     public GameObject ScopeOverlay;
@@ -32,9 +33,11 @@ public class ScopeIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if right click and weapon is sniper 
         if (Input.GetButtonDown("Fire2") && WeaponSwitching.selectedWeapon == 0)
         {
             isScoped = !isScoped;
+            //runs animation
             sniper.SetBool("Scoped", isScoped);
 
 
@@ -44,6 +47,7 @@ public class ScopeIn : MonoBehaviour
 
             if (isScoped)
             {
+                //kind of like wait statements and runs that class
                 StartCoroutine(OnScoped());
             }
             else
@@ -55,9 +59,10 @@ public class ScopeIn : MonoBehaviour
             if (Input.GetKeyDown(shoot))
             {
                 Shoot();
-
+                //runs only once
                 isScoped = false;
                 //sniper.SetBool("Scoped", false);
+                //reload animation
                 sniper.SetBool("Reload", true);
                 StartCoroutine(wait());
                 
@@ -87,13 +92,14 @@ public class ScopeIn : MonoBehaviour
 
     IEnumerator OnScoped()
     {
+        //wait time
         yield return new WaitForSeconds(.15f);
-
+        //the scope iamge 
         ScopeOverlay.SetActive(true);
         blackLeft.SetActive(true);
         blackRight.SetActive(true);
         weaponCamera.SetActive(false);
-
+        //what you see on the screen changes
         normalFOV = mainCamera.fieldOfView;
         mainCamera.fieldOfView = scopedFOV;
     }

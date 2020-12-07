@@ -11,6 +11,7 @@ public class TargetFramerate : MonoBehaviour
     }
 
     // Update is called once per frame
+    //to fix frame rate and keepp it constant
     void Update()
     {
         Application.targetFrameRate = 50;
