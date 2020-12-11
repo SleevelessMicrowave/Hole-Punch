@@ -25,10 +25,12 @@ public class ShootGravityOrb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //instantiates object and shoots it
         if (Input.GetKeyDown(KeyCode.F) && shot == false && WeaponSwitching.selectedWeapon == 1)
         {
             GameObject instBullet = Instantiate(prefab, transform.position + Camera.main.transform.forward * 5 + Camera.main.transform.up * 3 / 2, Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z)) as GameObject;
             instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
+            //only want forwar and back from camera angle
             instBulletRigidbody.velocity = Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z) * new Vector3(0, 0, speed);
             //instBulletRigidbody.AddForce(Vector3.left * speed);
             //Camera.main.transform.forward * speed

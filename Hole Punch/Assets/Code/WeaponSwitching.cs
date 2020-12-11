@@ -15,14 +15,16 @@ public class WeaponSwitching : MonoBehaviour
     void Update()
     {
         int previousSelectedWeapon = selectedWeapon;
-
+//if scrolling up
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
+            //once it reaches weapon 3 it resets
             if (selectedWeapon >= transform.childCount - 1)
                 selectedWeapon = 0;
             else
                selectedWeapon++;
         }
+        //scrolling down
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             if (selectedWeapon <= 0)
@@ -30,7 +32,7 @@ public class WeaponSwitching : MonoBehaviour
             else
                 selectedWeapon--;
         }
-
+        //press number 1 for weapon 0
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
@@ -45,7 +47,7 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 2;
         }
-
+        //if it changes it runs it again
         if (previousSelectedWeapon != selectedWeapon)
             SelectWeapon();
     }
@@ -53,7 +55,7 @@ public class WeaponSwitching : MonoBehaviour
     void SelectWeapon()
     {
         int i = 0;
-        //for each of the three weapons
+        //for each of the three weapons in the weapon holder
         foreach (Transform weapon in transform)
         {
             if (i == selectedWeapon)

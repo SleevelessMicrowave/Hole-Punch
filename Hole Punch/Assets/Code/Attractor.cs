@@ -17,9 +17,12 @@ public class Attractor : MonoBehaviour
 
     void FixedUpdate()
     {
+        //find objects with attractor script and puts them in an array
         Attractor[] Attractors = FindObjectsOfType<Attractor>();
+        //for each one of the objects in the array
         foreach (Attractor attractor in Attractors)
         {
+            //attracts the other things that aren'y itself
             if (attractor != this)
             {
                 Attract(attractor);
@@ -27,16 +30,19 @@ public class Attractor : MonoBehaviour
         }
     }
 
+//takes the rigid body of attractor that is not the object
     void Attract(Attractor objToAttract)
     {
         Rigidbody rbToAttract = objToAttract.rb;
 
+    //distance between two attarctors
         Vector3 direction = rb.position - rbToAttract.position;
         float distance = direction.magnitude;
-
+    //path to curve around the gravity orb 
         float forceMagnitude = G * (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
+        //direction.normalized removes the direction from it 
         Vector3 force = direction.normalized * forceMagnitude;
-
+        //if close enough and object is not the bullet and adds force going into it
         if(distance < 15 && gameObject.name != "bullet(Clone)")
         {
             rbToAttract.AddForce(force);
