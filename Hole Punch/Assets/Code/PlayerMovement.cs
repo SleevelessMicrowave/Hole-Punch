@@ -151,10 +151,11 @@ public class PlayerMovement : MonoBehaviour
         //hookshopt position and - location of player to figure the distance to move 
         Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
 
-        float hookshotSpeed = Vector3.Distance(transform.position, hookshotPosition);
+        //float hookshotSpeed = Vector3.Distance(transform.position, hookshotPosition);
         float hookshotSpeedMultiplier = 2f;
 
-        controller.Move(hookshotDir * hookshotSpeed * hookshotSpeedMultiplier * Time.deltaTime);
+        controller.Move(hookshotDir * hookshotSpeedMultiplier * Time.deltaTime * 30);
+        //controller.Move(hookshotDir * hookshotSpeed * hookshotSpeedMultiplier * Time.deltaTime);
 
         float reachedHookshotPositionDistance = 3f;
         //distance between orb and person cant go below three, then goes back to normal no teleporting state
