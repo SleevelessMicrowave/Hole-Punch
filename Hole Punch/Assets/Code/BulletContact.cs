@@ -20,7 +20,7 @@ public class BulletContact : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("yes");
+            // Debug.Log("yes");
             Destroy(gameObject);
         }
     }
