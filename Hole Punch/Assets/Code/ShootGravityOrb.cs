@@ -26,7 +26,7 @@ public class ShootGravityOrb : MonoBehaviour
     void Update()
     {
         //instantiates object and shoots it
-        if (Input.GetKeyDown(KeyCode.F) && shot == false && WeaponSwitching.selectedWeapon == 1)
+        if (Input.GetKeyDown(KeyCode.F) && shot == false && WeaponSwitching.selectedWeapon == 1 && ammoCount.gravReady == "Ready")
         {
             GameObject instBullet = Instantiate(prefab, transform.position + Camera.main.transform.forward * 5 + Camera.main.transform.up * 3 / 2, Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z)) as GameObject;
             instBullet.gameObject.AddComponent<destroyGravityOrb>();
