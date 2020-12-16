@@ -10,7 +10,7 @@ public class Shoot: MonoBehaviour
 
     GameObject prefab;
     public float speed = 100f;
-    public static bool fireAmmo = true;
+    public static bool fireAmmo;
     public KeyCode shoot;
 
 
@@ -39,5 +39,5 @@ public class Shoot: MonoBehaviour
             //Camera.main.transform.forward * speed
             
         }
-    }
+}
 }

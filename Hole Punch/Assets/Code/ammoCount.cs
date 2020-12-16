@@ -16,7 +16,7 @@ public class ammoCount : MonoBehaviour {
     void Update()
     {
         ammoDisplay.text = "Sniper Bullets: " + remainingShots.ToString();
-        
+
         if(Input.GetMouseButtonDown(0) && !isFiring && remainingShots > 0 && WeaponSwitching.selectedWeapon == 0)
         {
             isFiring = true;
