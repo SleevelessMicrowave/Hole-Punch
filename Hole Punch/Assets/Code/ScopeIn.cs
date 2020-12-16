@@ -56,7 +56,7 @@ public class ScopeIn : MonoBehaviour
         if (isScoped)
         {
             PlayerMovement.speed = 4;
-            if (Input.GetKeyDown(shoot))
+            if (Input.GetKeyDown(shoot) && ammoCount.remainingShots > 0)
             {
                 Shoot();
                 //runs only once

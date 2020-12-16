@@ -12,7 +12,6 @@ public class gm : MonoBehaviour
     void Awake()
     {
         initialPosition = player.position;
-        Debug.Log(initialPosition);
     }
 
     // Update is called once per frame
