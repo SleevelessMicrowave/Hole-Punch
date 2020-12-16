@@ -10,7 +10,7 @@ public class Shoot: MonoBehaviour
 
     GameObject prefab;
     public float speed = 100f;
-
+    public static bool fireAmmo = true;
     public KeyCode shoot;
 
 
@@ -27,7 +27,7 @@ public class Shoot: MonoBehaviour
     void Update()
     {
         //key left click
-        if(Input.GetKeyDown(shoot))
+        if(Input.GetKeyDown(shoot) && fireAmmo == true)
         {
             //makes the object and positions it inside the barrel with transform and rotation of the camera
             GameObject instBullet = Instantiate(prefab, transform.position+Camera.main.transform.forward*10+Camera.main.transform.up*3/2, Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z)) as GameObject;

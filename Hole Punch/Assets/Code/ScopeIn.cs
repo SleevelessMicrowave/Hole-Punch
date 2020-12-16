@@ -18,7 +18,7 @@ public class ScopeIn : MonoBehaviour
     public GameObject blackLeft;
     public GameObject blackRight;
 
-    private bool isScoped = false;
+    public static bool isScoped = false;
 
     GameObject prefab;
     public float speed = 100f;
