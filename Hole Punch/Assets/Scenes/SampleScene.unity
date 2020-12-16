@@ -198,7 +198,7 @@ MonoBehaviour:
   player: {fileID: 963194227}
   wind: {fileID: 1349273922}
   gravity: -40
-  jumpHeight: 3
+  jumpHeight: 7
   sprint: 304
   crouch: 306
   groundCheck: {fileID: 1370433135}
@@ -1706,6 +1706,7 @@ GameObject:
   - component: {fileID: 1194410633}
   - component: {fileID: 1194410632}
   - component: {fileID: 1194410634}
+  - component: {fileID: 1194410635}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -1752,6 +1753,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 20467518}
+--- !u!114 &1194410635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194410631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34454707ed8cd5d40a4c77d07a591657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remainingShots: 15
+  isFiring: 1
+  ammoDisplay: {fileID: 0}
 --- !u!1 &1211158951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 49706be1e2476fd4189a3750b8c4bd2f,

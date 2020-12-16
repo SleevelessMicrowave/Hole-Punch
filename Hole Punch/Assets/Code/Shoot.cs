@@ -30,7 +30,7 @@ public class Shoot: MonoBehaviour
         if(Input.GetKeyDown(shoot))
         {
             //makes the object and positions it inside the barrel with transform and rotation of the camera
-            GameObject instBullet = Instantiate(prefab, transform.position+Camera.main.transform.forward*5+Camera.main.transform.up*3/2, Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z)) as GameObject;
+            GameObject instBullet = Instantiate(prefab, transform.position+Camera.main.transform.forward*10+Camera.main.transform.up*3/2, Quaternion.Euler(Camera.main.transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, Camera.main.transform.eulerAngles.z)) as GameObject;
             //make bullet interact with physics
             Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
             //Gets rotation of camera to make sure there's no x and y movement and only forwaerd movement 
