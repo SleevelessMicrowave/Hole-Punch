@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class ammoCount : MonoBehaviour {
-    public int remainingShots;
+    public static int remainingShots = 15;
     public bool isFiring;
     public Text ammoDisplay;
+
+    public static bool fireAmmo;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,6 @@ public class ammoCount : MonoBehaviour {
             isFiring = true;
             remainingShots--;
             isFiring = false;
-        }
-        if(remainingShots == 0)
-        {
-            Shoot.fireAmmo = false;
         }
         if(Input.GetKeyDown(KeyCode.R))
         {
