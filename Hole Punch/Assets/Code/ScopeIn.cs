@@ -1,6 +1,5 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class ScopeIn : MonoBehaviour
@@ -19,6 +18,8 @@ public class ScopeIn : MonoBehaviour
     public GameObject blackRight;
 
     public static bool isScoped = false;
+
+    public bool shot = false;
 
     GameObject prefab;
     public float speed = 100f;
@@ -53,21 +54,31 @@ public class ScopeIn : MonoBehaviour
             else
                 OnUnscoped();
         }
-        if (isScoped)
+        if (isScoped )
         {
             PlayerMovement.speed = 4;
-        }
-        if (Input.GetKeyDown(shoot) && ammoCount.remainingShots > 0)
-        {
-            Shoot();
-            //runs only once
-            isScoped = false;
+            if (Input.GetKeyDown(shoot) && !shot)
+            {
+                shot = true;
+                Debug.Log("scoped");
+                Shoot();
+                //runs only once
+                isScoped = false;
                 //sniper.SetBool("Scoped", false);
                 //reload animation
-            sniper.SetBool("Reload", true);
-            StartCoroutine(wait());
-                
+                sniper.SetBool("Reload", true);
+                StartCoroutine(wait());
+            }
         }
+        if (Input.GetKeyDown(shoot) && !shot)
+        {
+            Debug.Log("unscoped");
+            Shoot();
+            shot = true;
+            sniper.SetBool("test", true);
+            StartCoroutine(noScope());
+        }
+
     }
 
     void OnUnscoped()
@@ -80,11 +91,21 @@ public class ScopeIn : MonoBehaviour
         sniper.SetBool("Scoped", false);
         PlayerMovement.speed = 8;
         mainCamera.fieldOfView = normalFOV;
+        shot = false;
+    }
+
+    IEnumerator noScope()
+    {
+        yield return new WaitForSeconds(.15f);
+        sniper.SetBool("test", false);
+        sniper.SetBool("Reload", false);
+        shot = false;
     }
 
     IEnumerator wait()
     {
         yield return new WaitForSeconds(.15f);
+        
         OnUnscoped();
     }
 
